@@ -1,5 +1,8 @@
 package s06;
 
+/**
+ * Schnittstelle fuer die Abstrake Fabrik zu Erzeugung der Enten
+ */
 public abstract class AbstrakteEntenFabrik {
  
 	public abstract Quakfaehig erzeugeStockEnte();
