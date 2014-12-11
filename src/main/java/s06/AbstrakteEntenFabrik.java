@@ -1,7 +1,7 @@
 package s06;
 
 /**
- * Schnittstelle fuer die Abstrake Fabrik zu Erzeugung der Enten
+ * Schnittstelle der Abstrake Fabrik zu Erzeugung der Enten
  */
 public abstract class AbstrakteEntenFabrik {
  
