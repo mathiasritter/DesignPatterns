@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 import java.util.Iterator;
 import java.util.ArrayList;

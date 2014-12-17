@@ -1,7 +1,4 @@
-package s06;
-
-import s06.Beobachter;
-import s06.QuakBeobachtungsSubjekt;
+package at.geyerritter.s06;
 
 /**
  * Created by Stefan on 17.12.2014.

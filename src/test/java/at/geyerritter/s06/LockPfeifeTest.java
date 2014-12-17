@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 import org.junit.After;
 import org.junit.Before;

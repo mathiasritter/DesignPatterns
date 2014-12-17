@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 public class EntenSimulator {
 	public static void main(String[] args) {

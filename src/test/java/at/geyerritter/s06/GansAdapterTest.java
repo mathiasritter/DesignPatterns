@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,9 +9,10 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class GummiEnteTest {
+public class GansAdapterTest {
 
-    private GummiEnte e;
+    GansAdapter g;
+
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -23,29 +24,28 @@ public class GummiEnteTest {
         System.setErr(null);
     }
 
-
     @Before
     public void setUp() throws Exception {
-        e = new GummiEnte();
+        g = new GansAdapter(new Gans());
         System.setOut(new PrintStream(outContent));
         System.setErr(new PrintStream(errContent));
     }
 
     @Test
     public void testQuaken() throws Exception {
-        e.quaken();
-        assertEquals("Quietsch\n", outContent.toString());
+        g.quaken();
+        assertEquals("Schnatter\n", outContent.toString());
     }
 
     @Test
     public void testRegistriereBeobachter() throws Exception {
-        e.registriereBeobachter(new Beobachter() {
+        g.registriereBeobachter(new Beobachter() {
             @Override
             public void aktualisieren(QuakBeobachtungsSubjekt ente) {
 
             }
         });
-        assertEquals(1, e.senderRing.beobachtende.size());
+        assertEquals(1, g.senderRing.beobachtende.size());
     }
 
     @Test
@@ -53,21 +53,20 @@ public class GummiEnteTest {
 
         final int[] anzahl = new int[1];
 
-        e.registriereBeobachter(new Beobachter() {
+        g.registriereBeobachter(new Beobachter() {
             @Override
             public void aktualisieren(QuakBeobachtungsSubjekt ente) {
                 anzahl[0] = 1;
             }
         });
 
-        e.benachrichtigeBeobachtende();
+        g.benachrichtigeBeobachtende();
 
         assertEquals(1, anzahl[0]);
-
     }
 
     @Test
     public void testToString() throws Exception {
-        assertEquals("Gummiente", e.toString());
+        assertEquals("GansAdapter: gans=[Gans]", g.toString());
     }
 }

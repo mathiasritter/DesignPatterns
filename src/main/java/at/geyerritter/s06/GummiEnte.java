@@ -1,14 +1,14 @@
-package s06;
+package at.geyerritter.s06;
 
-public class MoorEnte implements Quakfaehig {
+public class GummiEnte implements Quakfaehig {
 	SenderRing senderRing;
 
-	public MoorEnte() {
+	public GummiEnte() {
 		senderRing = new SenderRing(this);
 	}
-
+ 
 	public void quaken() {
-		System.out.println("Quak");
+		System.out.println("Quietsch");
 		benachrichtigeBeobachtende();
 	}
 
@@ -19,8 +19,8 @@ public class MoorEnte implements Quakfaehig {
 	public void benachrichtigeBeobachtende() {
 		senderRing.benachrichtigeBeobachtende();
 	}
-
+  
 	public String toString() {
-		return "Moorente";
+		return "Gummiente";
 	}
 }

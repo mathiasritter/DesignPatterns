@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 public class Quakologe implements Beobachter {
  

@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 public interface QuakBeobachtungsSubjekt {
 	public void registriereBeobachter(Beobachter beobachter);

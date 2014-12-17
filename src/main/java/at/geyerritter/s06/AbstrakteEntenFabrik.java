@@ -1,4 +1,4 @@
-package s06;
+package at.geyerritter.s06;
 
 /**
  * Schnittstelle der Abstrake Fabrik zu Erzeugung der Enten
