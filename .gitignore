@@ -1,3 +1,4 @@
 # Created by .gitignore support plugin (hsz.mobi)
 .idea
 sews06.iml
+dependency-reduced-pom.xml
