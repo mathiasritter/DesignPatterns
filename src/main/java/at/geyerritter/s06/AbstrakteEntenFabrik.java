@@ -5,6 +5,8 @@ package at.geyerritter.s06;
  *
  * @author Geyer Stefan
  * @author Ritter Mathias
+ *
+ * @version 0.1
  */
 public abstract class AbstrakteEntenFabrik {
 

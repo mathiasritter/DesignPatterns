@@ -6,6 +6,8 @@ package at.geyerritter.s06;
  *
  * @author Geyer Stefan
  * @author Ritter Mathias
+ *
+ * @version 0.1
  */
 public interface Beobachter {
 

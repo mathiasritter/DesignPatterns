@@ -2,10 +2,12 @@ package at.geyerritter.s06;
 
 /**
  * Adapter fuer eine Gans.
- * Somit kann ein Client eine Gans auch als "Quakfaehig" nutzen
+ * Somit kann ein Client eine Gans auch als "Quakfaehig" nutzen.
  *
  * @author Geyer Stefan
  * @author Ritter Mathias
+ *
+ * @version 0.1
  */
 public class GansAdapter implements Quakfaehig {
 
@@ -23,23 +25,30 @@ public class GansAdapter implements Quakfaehig {
 	}
 
 	/**
-	 * Quaken loest bei der Gans ein Schnattern aus.
-	 * Die Beobachter werden benachrichtigt.
+	 * @see Quakfaehig#quaken()
 	 */
 	public void quaken() {
 		gans.schnattern();
 		benachrichtigeBeobachtende();
 	}
 
-
+	/**
+	 * @see at.geyerritter.s06.Quakfaehig#registriereBeobachter(Beobachter)
+	 */
 	public void registriereBeobachter(Beobachter beobachter) {
 		senderRing.registriereBeobachter(beobachter);
 	}
 
+	/**
+	 * Benachrichtigen aller im senderRing eingetragener Beobachter
+	 */
 	public void benachrichtigeBeobachtende() {
 		senderRing.benachrichtigeBeobachtende();
 	}
 
+	/**
+	 * @see Object#toString()
+	 */
 	public String toString() {
 		return "GansAdapter: gans=[Gans]";
 	}
