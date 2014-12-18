@@ -10,6 +10,7 @@ package at.geyerritter.s06;
  * @version 0.1
  */
 public class QuakZaehler implements Quakfaehig {
+
 	Quakfaehig ente;
 	static int anzahlDerQuaks;
 

@@ -43,7 +43,7 @@ public class MoorEnte implements Quakfaehig {
 	}
 
 	/**
-	 * @see Quakfaehig#toString()
+	 * @see Object#toString()
 	 */
 	public String toString() {
 		return "Moorente";
