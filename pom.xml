@@ -34,6 +34,7 @@
                 <filtering>false</filtering>
                 <directory>src/main/java</directory>
             </resource>
+            <!-- documents-->
             <resource>
                 <directory>documents</directory>
                 <filtering>true</filtering>
@@ -43,10 +44,17 @@
                 </includes>
                 <targetPath>docs</targetPath>
             </resource>
+            <!-- testcases-->
             <resource>
                 <directory>src/test/java</directory>
                 <filtering>false</filtering>
                 <targetPath>test</targetPath>
+            </resource>
+            <!-- .git folder for logs-->
+            <resource>
+                <directory>.git</directory>
+                <filtering>false</filtering>
+                <targetPath>git</targetPath>
             </resource>
         </resources>
         <plugins>
