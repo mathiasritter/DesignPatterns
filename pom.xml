@@ -41,20 +41,15 @@
                     <include>**/*.pdf</include>
                     <include>**/*.jpg</include>
                 </includes>
+                <targetPath>docs</targetPath>
             </resource>
             <resource>
-                <directory>src/test/jar</directory>
+                <directory>src/test/java</directory>
                 <filtering>false</filtering>
+                <targetPath>test</targetPath>
             </resource>
         </resources>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                </configuration>
-            </plugin>
             <!-- Set the compiler targets to 1.8 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
