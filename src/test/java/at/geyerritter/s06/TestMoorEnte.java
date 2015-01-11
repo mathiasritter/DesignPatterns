@@ -11,9 +11,6 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Stefan on 17.12.2014.
- */
 public class TestMoorEnte {
 
     private ByteArrayOutputStream sysOut;
