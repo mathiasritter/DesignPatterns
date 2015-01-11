@@ -39,7 +39,7 @@ public class ScharTest {
     public void testQuaken() throws Exception {
         s.hinzufuegen(new MoorEnte());
         s.quaken();
-        assertEquals("Quak\n", outContent.toString());
+        assertEquals("Quak" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

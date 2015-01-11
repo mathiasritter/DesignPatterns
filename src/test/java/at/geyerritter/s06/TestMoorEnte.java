@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -27,7 +28,7 @@ public class TestMoorEnte {
     public void testRegistriereBeobachter() {
         MoorEnte me = new MoorEnte();
         me.registriereBeobachter(new TestBeobachter());
-        //assertEquals(1, me.senderRing.getBeobachtende().);
+        assertEquals(1, me.senderRing.beobachtende.size());
     }
 
     @Test

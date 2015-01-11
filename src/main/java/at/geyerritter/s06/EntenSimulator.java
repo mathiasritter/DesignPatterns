@@ -5,73 +5,72 @@ package at.geyerritter.s06;
  *
  * @author Geyer Stefan
  * @author Ritter Mathias
- *
  * @version 0.1
  */
 public class EntenSimulator {
 
-	/**
-	 * Neuen Simulator und neue Entenfabrik initialisieren. <br>
-	 * Simulation starten.
-	 *
-	 * @param args Kommandozeilenargumente
-	 */
-	public static void main(String[] args) {
-		EntenSimulator simulator = new EntenSimulator();
-		AbstrakteEntenFabrik entenFabrik = new ZaehlendeEntenFabrik();
- 
-		simulator.simulieren(entenFabrik);
-	}
+    /**
+     * Neuen Simulator und neue Entenfabrik initialisieren. <br>
+     * Simulation starten.
+     *
+     * @param args Kommandozeilenargumente
+     */
+    public static void main(String[] args) {
+        EntenSimulator simulator = new EntenSimulator();
+        AbstrakteEntenFabrik entenFabrik = new ZaehlendeEntenFabrik();
 
-	/**
-	 * Die Simulation wird gestartet und ausgefuhert.
-	 *
-	 * @param entenfabrik Die Entenfabrik, die fuer die Simulation genutzt wird
-	 */
-	void simulieren(AbstrakteEntenFabrik entenfabrik) {
+        simulator.simulieren(entenFabrik);
+    }
 
-		// Mit Hilfe der Fabrik werden die Enten erzeugt
-		Quakfaehig gummiEnte = entenfabrik.erzeugeGummiEnte();
-		Quakfaehig lockPfeife = entenfabrik.erzeugeLockPfeife();
-		Quakfaehig moorEnte = entenfabrik.erzeugeMoorEnte();
+    /**
+     * Die Simulation wird gestartet und ausgefuhert.
+     *
+     * @param entenfabrik Die Entenfabrik, die fuer die Simulation genutzt wird
+     */
+    void simulieren(AbstrakteEntenFabrik entenfabrik) {
 
-		// Die Gans stellt eine Ausnahme dar, da sie nur mit Adapter genutzt werden kann
-		Quakfaehig gansEnte = new GansAdapter(new Gans());
+        // Mit Hilfe der Fabrik werden die Enten erzeugt
+        Quakfaehig gummiEnte = entenfabrik.erzeugeGummiEnte();
+        Quakfaehig lockPfeife = entenfabrik.erzeugeLockPfeife();
+        Quakfaehig moorEnte = entenfabrik.erzeugeMoorEnte();
 
-		//Zwei Scharen werden initialisiert
-		Schar EntenSchar = new Schar();
-		Schar stockEntenSchar = new Schar();
+        // Die Gans stellt eine Ausnahme dar, da sie nur mit Adapter genutzt werden kann
+        Quakfaehig gansEnte = new GansAdapter(new Gans());
 
-		// Eine neue StockEnte wird mit Hilfe der Fabrik erzeugt
-		Quakfaehig stockEnte1 = entenfabrik.erzeugeStockEnte();
-		stockEntenSchar.hinzufuegen(stockEnte1);
+        //Zwei Scharen werden initialisiert
+        Schar EntenSchar = new Schar();
+        Schar stockEntenSchar = new Schar();
 
-		// Zur Entenschar werden diverse Enten und die Stockenten-Schar hinzugefuegt
-		EntenSchar.hinzufuegen(gummiEnte);
-		EntenSchar.hinzufuegen(lockPfeife);
-		EntenSchar.hinzufuegen(moorEnte);
-		EntenSchar.hinzufuegen(stockEntenSchar);
-		EntenSchar.hinzufuegen(gansEnte);
+        // Eine neue StockEnte wird mit Hilfe der Fabrik erzeugt
+        Quakfaehig stockEnte1 = entenfabrik.erzeugeStockEnte();
+        stockEntenSchar.hinzufuegen(stockEnte1);
 
-		//Der Quakologe registriert sich bei der Enten-Schar
-		Quakologe quakologe = new Quakologe();
-		EntenSchar.registriereBeobachter(quakologe);
+        // Zur Entenschar werden diverse Enten und die Stockenten-Schar hinzugefuegt
+        EntenSchar.hinzufuegen(gummiEnte);
+        EntenSchar.hinzufuegen(lockPfeife);
+        EntenSchar.hinzufuegen(moorEnte);
+        EntenSchar.hinzufuegen(stockEntenSchar);
+        EntenSchar.hinzufuegen(gansEnte);
 
-		//Das Quaken der Enten-Schar wird ausgeloest
-		simulieren(EntenSchar);
+        //Der Quakologe registriert sich bei der Enten-Schar
+        Quakologe quakologe = new Quakologe();
+        EntenSchar.registriereBeobachter(quakologe);
 
-		//Ausgabe, wie oft die Enten gequakt haben
-		System.out.println("Die Enten haben " +
-		                   QuakZaehler.getQuaks() + 
-		                   "-mal gequakt.");
-	}
+        //Das Quaken der Enten-Schar wird ausgeloest
+        simulieren(EntenSchar);
 
-	/**
-	 * Simuliert das Quaken eines Quakfaehigen Objekts (z.B. Ente)
-	 *
-	 * @param ente Quakfaehiges Objekt (z.B. Ente)
-	 */
-	void simulieren(Quakfaehig ente) {
-		ente.quaken();
-	}
+        //Ausgabe, wie oft die Enten gequakt haben
+        System.out.println("Die Enten haben " +
+                QuakZaehler.getQuaks() +
+                "-mal gequakt.");
+    }
+
+    /**
+     * Simuliert das Quaken eines Quakfaehigen Objekts (z.B. Ente)
+     *
+     * @param ente Quakfaehiges Objekt (z.B. Ente)
+     */
+    void simulieren(Quakfaehig ente) {
+        ente.quaken();
+    }
 }

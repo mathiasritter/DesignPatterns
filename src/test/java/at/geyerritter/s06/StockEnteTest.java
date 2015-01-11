@@ -34,7 +34,7 @@ public class StockEnteTest {
     @Test
     public void testQuaken() throws Exception {
         s.quaken();
-        assertEquals("Quak\n", outContent.toString());
+        assertEquals("Quak" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

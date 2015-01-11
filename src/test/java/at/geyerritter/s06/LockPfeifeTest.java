@@ -32,7 +32,7 @@ public class LockPfeifeTest {
     @Test
     public void testQuaken() throws Exception {
         l.quaken();
-        assertEquals("Kwaak\n", outContent.toString());
+        assertEquals("Kwaak" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

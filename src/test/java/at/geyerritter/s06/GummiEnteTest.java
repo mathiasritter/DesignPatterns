@@ -34,7 +34,7 @@ public class GummiEnteTest {
     @Test
     public void testQuaken() throws Exception {
         e.quaken();
-        assertEquals("Quietsch\n", outContent.toString());
+        assertEquals("Quietsch" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

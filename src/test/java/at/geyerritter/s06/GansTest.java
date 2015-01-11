@@ -35,7 +35,7 @@ public class GansTest {
     @Test
     public void testSchnattern() throws Exception {
         g.schnattern();
-        assertEquals("Schnatter\n", outContent.toString());
+        assertEquals("Schnatter" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

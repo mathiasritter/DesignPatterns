@@ -32,13 +32,13 @@ public class QuakZaehlerTest {
     @Test
     public void testQuaken() throws Exception {
         q.quaken();
-        assertEquals("Quak\n", outContent.toString());
+        assertEquals("Quak" + System.lineSeparator(), outContent.toString());
     }
 
     @Test
     public void testGetQuaks() throws Exception {
         q.quaken();
-        assertEquals(QuakZaehler.anzahlDerQuaks, 1);
+        assertEquals(QuakZaehler.getQuaks(), 1);
     }
 
     @Test

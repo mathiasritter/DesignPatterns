@@ -13,7 +13,6 @@ public class GansAdapterTest {
 
     GansAdapter g;
 
-
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
@@ -34,7 +33,7 @@ public class GansAdapterTest {
     @Test
     public void testQuaken() throws Exception {
         g.quaken();
-        assertEquals("Schnatter\n", outContent.toString());
+        assertEquals("Schnatter" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

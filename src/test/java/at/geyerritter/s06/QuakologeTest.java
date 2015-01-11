@@ -32,7 +32,7 @@ public class QuakologeTest {
     @Test
     public void testAktualisieren() throws Exception {
         q.aktualisieren(new MoorEnte());
-        assertEquals("Quakologe: [Moorente: senderRing=[SenderRing: ente]]\n", outContent.toString());
+        assertEquals("Quakologe: [Moorente: senderRing=[SenderRing: ente]]" + System.lineSeparator(), outContent.toString());
     }
 
     @Test
